@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   return (
     <div className="fixed flex justify-between w-full py-[32px] items-center bg-[#ffffff] pl-[38px] pr-[40px]">
       <div className="flex max-w-[410px] w-full justify-between">
-        {location.pathname !== "/login" && location.pathname !== "/add" ? (
+        {location.pathname !== "/login" && location.pathname !== "/login/sms" && location.pathname !== "/add" ? (
           <img
             className="cursor-pointer"
             onClick={() => setMenuOpen(!isMenuOpen)}

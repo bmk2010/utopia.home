@@ -29,6 +29,14 @@ textarea:focus {
   background-color: #fff;
 }
 
+#otp-children:focus {
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #FCA311 !important;
+  color: #FCA311 !important;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

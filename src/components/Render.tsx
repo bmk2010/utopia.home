@@ -27,12 +27,12 @@ const Render: React.FC<RenderProps> = ({ data = [] }) => {
   const [isLoading, setIsLoading] = useState(true);
   const isCenter = useClickStore((state) => state.isClicked);
   const navigate = useNavigate();
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem("token");
 
   useEffect(() => {
     const savedLikes = JSON.parse(localStorage.getItem("likedHomes") || "[]");
     setLikedHomes(savedLikes);
-    setIsLoading(false); 
+    setIsLoading(false);
   }, []);
 
   const handleLike = (home: Home) => {
@@ -61,8 +61,9 @@ const Render: React.FC<RenderProps> = ({ data = [] }) => {
           <Audio height="80" width="80" color="green" ariaLabel="loading" />
         </div>
       ) : data.length === 0 ? (
-        <div className="flex justify-center items-center h-screen">
-          <p>No data available</p>
+        <div className="flex justify-center w-full items-center gap-5">
+          <img src={"https://uzum.uz/static/img/hearts.cf414be.png"} alt="" />
+          <h2 className="text-[42px]">Homes not found</h2>
         </div>
       ) : (
         data.map((home) => (

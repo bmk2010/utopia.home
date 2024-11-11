@@ -14,7 +14,7 @@ const MainLayout = ({ children }: MainLayoutProps) => {
     <div className="max-w-[1920px] w-full">
       <Header />
       {children}
-      {location.pathname !== '/login' && <Footer />}
+      {location.pathname !== '/login' && location.pathname !== '/login/sms' && <Footer />}
     </div>
   );
 };

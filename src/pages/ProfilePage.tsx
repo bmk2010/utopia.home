@@ -9,6 +9,9 @@ import { IoMdCheckmark } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import orders from "../assets/MyOrders (1).svg"
+import likes from "../assets/Group 97.svg"
+import balance from "../assets/Group 98.svg"
 
 const ProfilePage: React.FC = () => {
   const [name, setName] = useState("");
@@ -48,10 +51,10 @@ const ProfilePage: React.FC = () => {
             </h1>
             <div className="bg-[white] p-[60px] flex gap-[182px] rounded-xl">
               <div className="flex flex-col justify-between h-full gap-60 mr-20">
-                <div className="flex flex-col gap-[35px]">
+                <div className="flex flex-col gap-[35px] cursor-pointer">
                   <img src={MyAccount} alt="" />
-                  <img src={MyAccount} alt="" />
-                  <img src={MyAccount} alt="" />
+                  <img src={orders} alt="" />
+                  <img onClick={() => navigate('/likes')} src={likes} alt="" />
                   <img src={MyAccount} alt="" />
                   <img src={MyAccount} alt="" />
                   <img src={MyAccount} alt="" />

@@ -1,28 +1,17 @@
 import React from "react";
+import InputMask from "react-input-mask";
 import MainLayout from "../Layouts/MainLayout";
 import bg from "../assets/Vector 8.png";
 import phone from "../assets/Frame (11).svg";
 import { IoIosLock } from "react-icons/io";
-import request from "../axios";
-import useTokenStore from "../token.zustand";
 import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
-  const set = useTokenStore((state) => state.setToken);
   const navigate = useNavigate();
 
   const handleLogin = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    request
-      .post("https://api.escuelajs.co/api/v1/auth/login", {
-        email: "john@mail.com",
-        password: "changeme",
-      })
-      .then((response) => {
-        set(response.data.access_token);
-        localStorage.setItem("token", response.data.access_token);
-        navigate("/");
-      });
+    navigate("/login/sms");
   };
 
   return (
@@ -40,9 +29,9 @@ const Login: React.FC = () => {
           >
             <div className="relative h-[20px]">
               <img className="absolute top-[50%]" src={phone} alt="" />
-              <input
+              <InputMask
+                mask="(99) 999-99-99"
                 required
-                type="text"
                 placeholder="Номер телефона"
                 className="focus:border-none outline-none border-b-[1px] border-b-[#FCA311] w-[350px] pl-[36px] py-[10px]"
               />
@@ -55,8 +44,8 @@ const Login: React.FC = () => {
               />
               <input
                 required
-                type="text"
-                placeholder="Номер телефона"
+                type="password"
+                placeholder="Пароль"
                 className="focus:border-none outline-none border-b-[1px] border-b-[#FCA311] w-[350px] pl-[36px] py-[10px]"
               />
             </div>

@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import LikesPage from "./pages/LikesPage";
 import ProfilePage from "./pages/ProfilePage";
 import AddHome from "./pages/AddHome";
+import SmsPage from "./pages/SmsPage";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/:id" element={<SingleHome />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/login/sms" element={<SmsPage />} />
         <Route path="/likes" element={<LikesPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/add" element={<AddHome />} />
