@@ -11,7 +11,6 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import orders from "../assets/MyOrders (1).svg"
 import likes from "../assets/Group 97.svg"
-import balance from "../assets/Group 98.svg"
 
 const ProfilePage: React.FC = () => {
   const [name, setName] = useState("");
