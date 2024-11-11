@@ -25,7 +25,7 @@ const RenderHomes: React.FC = () => {
   return (
     <div className="flex gap-[52px]">
       {homes
-        .slice(homes.length - homes.length + 3)
+        .slice(homes.length - 3)
         .map((home: homeType, i: number) => (
           <div
             className="flex flex-col gap-8 max-w-[300px] bg-[white] rounded-xl pb-3"
